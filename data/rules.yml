@@ -2,12 +2,32 @@ version: "2.0"
 
 rules:
 
-- rule: Say goodbye anytime the user says goodbye
-  steps:
-  - intent: goodbye
-  - action: utter_goodbye
+  - rule: Say goodbye anytime the user says goodbye
+    steps:
+    - intent: goodbye
+    - action: utter_goodbye
 
-- rule: Say 'I am a bot' anytime the user challenges
-  steps:
-  - intent: bot_challenge
-  - action: utter_iamabot
+  - rule: Say 'I am a bot' anytime the user challenges
+    steps:
+    - intent: bot_challenge
+    - action: utter_name
+
+  - rule: Say 'I can guide you customise your painting' anytime the user says how_can_you_help_me
+    steps:
+    - intent: help
+    - action: utter_bot_help
+
+  """- rule: activate painting form
+    steps:
+    - intent: painting_quere
+    - action: painting_quere_form
+    - active_loop: painting_quere_form
+
+  - rule: submit form
+    condition:
+    - active_loop: painting_quere_form
+    steps:
+    - action: painting_quere_form
+    - active_loop: null
+    - action: utter_submit
+    - action: utter_slots_values"""

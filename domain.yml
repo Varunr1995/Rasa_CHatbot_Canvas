@@ -4,30 +4,62 @@ intents:
   - greet
   - goodbye
   - affirm
-  - deny
+  - reject
   - mood_great
   - mood_unhappy
   - bot_challenge
+  - askname
+  - help
 
 responses:
   utter_greet:
-  - text: "Hey! How are you?"
+  - text: "Hey! Welcome to My Website, how can I help you?  "
+  - text: "Hi Welcome to My Website, how can I help you?"
 
-  utter_cheer_up:
-  - text: "Here is something to cheer you up:"
-    image: "https://i.imgur.com/nGF1K8f.jpg"
+  utter_ask_name:
+  - text: "Can you please provide your name?"
 
-  utter_did_that_help:
+  utter_ask_entity_2:
+  - text: "Please type entity_2"
+
+  utter_ask_entity_3:
+  - text: "Please type entity_3"
+
+  utter_ask_entity_4:
+  - text: "Please type entity_4"
+
+  utter_ask_entity_5:
+  - text: "Please type entity_5"
+
+  utter_ask_entity_6:
+  - text: "Please type entity_6"
+
+  utter_reject:
+  - text: "Sorry to hear it,How can I help you?"
   - text: "Did that help you?"
+
+  utter_default:
+  - text: "I am not sure what you're aiming for."
+  - text: "I am sorry but I am not able to get you."
+  - text: "My appologies but I am not able to get you."  
 
   utter_happy:
   - text: "Great, carry on!"
 
+  utter_affirm:
+  - text: "Nice to hear it"
+
   utter_goodbye:
   - text: "Bye"
 
-  utter_iamabot:
+  utter_name:
   - text: "I am a bot, powered by Rasa."
+
+  utter_bot_help:
+  - text: "I'm here to help you in customising your painting."
+  - text: "I'm powered by A.I here to helps you in guide to buy a beautiful painting with your desired customisation."
+  - text: "I'm here to gather information of how you want your painting to be."
+
 
 session_config:
   session_expiration_time: 60

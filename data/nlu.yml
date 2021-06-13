@@ -217,20 +217,7 @@ nlu:
     - extremly sad
     - so saad
     - so sad
-    
-"""
-- intent: painting_quere
-  examples: |
-    - im interested in buying a painting
-    - i'm interested in buying a painting
-    - I'm interested in buying a [painting](pic)
-    - interested in buying [canvas](pic)
-    - id like to request a painting
-    - id like to buy a painting
-    - im looking for a [painting that have a beautuful background](pic)
-    - i would like to get a sketch of my [photograph](pic)
-    - i would like to get a sketch of my [photo](pic)
-"""   
+
 - intent: bot_challenge
   examples: |
     - are you a bot?

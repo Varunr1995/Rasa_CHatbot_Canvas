@@ -16,24 +16,6 @@ responses:
   - text: "Hey! Welcome to My Website, how can I help you?  "
   - text: "Hi Welcome to My Website, how can I help you?"
 
-  utter_ask_name:
-  - text: "Can you please provide your name?"
-
-  utter_ask_entity_2:
-  - text: "Please type entity_2"
-
-  utter_ask_entity_3:
-  - text: "Please type entity_3"
-
-  utter_ask_entity_4:
-  - text: "Please type entity_4"
-
-  utter_ask_entity_5:
-  - text: "Please type entity_5"
-
-  utter_ask_entity_6:
-  - text: "Please type entity_6"
-
   utter_reject:
   - text: "Sorry to hear it,How can I help you?"
   - text: "Did that help you?"

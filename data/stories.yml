@@ -67,7 +67,7 @@ stories:
       - intent: painting_request
       - action: painting_form
       - active_loop: painting_form
-      - intent: stop
+      - intent: out_of_scope
       - action: utter_ask_continue
       - intent: deny
       - action: action_deactivate_loop

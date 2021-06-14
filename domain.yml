@@ -109,6 +109,21 @@ responses:
   utter_ask_continue:
   - text: "Do you want to continue?"
   
+  utter_wrong_art_type:
+    - text: "Sorry we are unable to proceed with your art type, please try again"
+
+  utter_wrong_size_type:
+    - text: "Sorry we are unable to proceed with your size type, please try again"
+
+  utter_wrong_frame_type:
+    - text: "Sorry we are unable to proceed with your frame type, please try again"
+
+  utter_wrong_finishing_type:
+    - text: "Sorry we are unable to proceed with your finishing type, please try again"
+
+  utter_wrong_orientation_type:
+    - text: "Sorry we are unable to proceed with your orientation type, please try again"
+  
   utter_ask_art_type:
   - text: "What is your desired art model"
   utter_ask_size:

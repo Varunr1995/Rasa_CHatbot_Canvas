@@ -21,7 +21,7 @@ class ActionHelloWorld(FormAction):
     @staticmethod
     def required_slots(tracker: Tracker) -> List[Text]:
         print("required_slots(tracker: Tracker)")
-        return["art_type", "size","frame", "finishing", "orientation"]
+        return["art_type", "size", "frame", "finishing", "orientation"]
 
     def submit(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,

@@ -28,7 +28,6 @@ entities:
 actions:
   - painting_form
 
-
 slots:
   art_type:
     type: text
@@ -108,7 +107,7 @@ responses:
   - text: "I'm here to gather information of how you want your painting to be."
   
   utter_ask_continue:
-    - text: "Do you want to continue?"
+  - text: "Do you want to continue?"
   
   utter_ask_art_type:
   - text: "What is your desired art model"

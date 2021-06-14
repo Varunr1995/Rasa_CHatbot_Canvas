@@ -49,7 +49,7 @@ stories:
     - intent: help
     - action: utter_bot_help
 
-  - story: stop form + continue
+  - story: painting_request_form
     steps:
       - intent: painting_request
       - action: painting_form

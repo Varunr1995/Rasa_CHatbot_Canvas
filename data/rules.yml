@@ -17,17 +17,17 @@ rules:
     - intent: help
     - action: utter_bot_help
 
-- rule: activate painting form
+  - rule: activate painting form
     steps:
-      - intent: painting_request
-      - action: painting_form
-      - active_loop: painting_form
+    - intent: painting_request
+    - action: painting_form
+    - active_loop: painting_form
 
   - rule: submit form
     condition:
     - active_loop: painting_form
     steps:
-      - action: painting_form
-      - active_loop: null
-      - action: utter_submit
-      - action: utter_slots_values
+    - action: painting_form
+    - active_loop: null
+    - action: utter_submit
+    - action: utter_slots_values

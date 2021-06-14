@@ -106,7 +106,10 @@ responses:
   - text: "I'm here to help you in customising your painting."
   - text: "I'm powered by A.I here to helps you in guide to buy a beautiful painting with your desired customisation."
   - text: "I'm here to gather information of how you want your painting to be."
-
+  
+  utter_ask_continue:
+    - text: "Do you want to continue?"
+  
   utter_ask_art_type:
   - text: "What is your desired art model"
   utter_ask_size:

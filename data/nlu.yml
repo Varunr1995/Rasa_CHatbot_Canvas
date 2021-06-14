@@ -254,3 +254,15 @@ nlu:
     - wait stop
     - holdon
     - you aren't answering properly
+
+- intent: painting_request
+  examples: |
+    - im interested in buying a painting
+    - i'm interested in buying a painting
+    - I'm interested in buying a painting
+    - interested in buying canvas
+    - id like to request a painting
+    - id like to buy a painting
+    - im looking for a painting that have a beautuful background
+    - i would like to get a sketch of my photograph
+    - i would like to get a sketch of my photo

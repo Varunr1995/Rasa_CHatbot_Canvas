@@ -10,39 +10,43 @@ intents:
   - bot_challenge
   - askname
   - help
+  - art_type_entry
+  - size_entry
+  - frame_entry
+  - finishing_entry
+  - orientation_entry
   - painting_request:
       use_entities: []
 
 entities:
-  - name
-  - entity_2
-  - entity_3
-  - entity_4
-  - entity_5
-  - entity_6
+  - art_type
+  - size
+  - frame
+  - finishing
+  - orientation
+
+actions:
+  - painting_form
+
 
 slots:
-  name:
+  art_type:
     type: text
     influence_conversation: false
     auto_fill: false
-  entity_2:
+  size:
     type: text
     influence_conversation: false
     auto_fill: false
-  entity_3:
+  frame:
     type: text
     influence_conversation: false
     auto_fill: false
-  entity_4:
+  orientation:
     type: text
     influence_conversation: false
     auto_fill: false
-  entity_5:
-    type: text
-    influence_conversation: false
-    auto_fill: false
-  entity_6:
+  finishing:
     type: text
     influence_conversation: false
     auto_fill: false
@@ -53,24 +57,21 @@ slots:
 forms:
   painting_form:
     required_slots:
-      name:
+      art_type:
       - type: from_entity
-        entity: name
-      entity_2:
+        entity: art_type
+      size:
       - type: from_entity
-        entity: entity_2
-      entity_3:
+        entity: size
+      frame:
       - type: from_entity
-        entity: entity_3
-      entity_4:
+        entity: frame
+      orientation:
       - type: from_entity
-        entity: entity_4
-      entity_5:
+        entity: orientation
+      finishing:
       - type: from_entity
-        entity: entity_5
-      entity_6:
-      - type: from_entity
-        entity: entity_6
+        entity: finishing
 
 responses:
   utter_greet:
@@ -106,29 +107,26 @@ responses:
   - text: "I'm powered by A.I here to helps you in guide to buy a beautiful painting with your desired customisation."
   - text: "I'm here to gather information of how you want your painting to be."
 
-  utter_ask_name:
-  - text: "What is your name?"
-  utter_ask_entity_2:
-  - text: "Please enter entity_2"
-  utter_ask_entity_3:
-  - text: "Please enter entity_3"
-  utter_ask_entity_4:
-  - text: "Please enter entity_4"
-  utter_ask_entity_5:
-  - text: "Please enter entity_5"
-  utter_ask_entity_6:
-  - text: "Please enter entity_6"
+  utter_ask_art_type:
+  - text: "What is your desired art model"
+  utter_ask_size:
+  - text: "Please enter your required size"
+  utter_ask_frame:
+  - text: "Please enter your desired frame type"
+  utter_ask_finishing:
+  - text: "Please enter your deisired finishing"
+  utter_ask_orientation:
+  - text: "Please enter orientation"
   utter_submit:
   - text: "All done!"
 
   utter_slots_values:
     - text: "I am going to run a search using the following parameters:\n
-             - name: {name}\n
-             - entity_2: {entity_2}\n
-             - entity_3: {entity_3}\n
-             - entity_4: {entity_4}\n
-             - entity_5: {entity_5}\n
-             - entity_6: {entity_6}"
+             - art_type: {art_type}\n
+             - size: {size}\n
+             - frame: {frame}\n
+             - finishing: {finishing}\n
+             - orientation: {orientation}"
 
 
 session_config:

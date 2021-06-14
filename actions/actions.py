@@ -13,15 +13,20 @@ from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
 from rasa_sdk.forms import FormAction
 
-class ActionHelloWorld(Action):
+class ActionHelloWorld(FormAction):
 
     def name(self) -> Text:
-        return "action_hello_world"
+        return "painting_form"
 
-    def run(self, dispatcher: CollectingDispatcher,
+    @staticmethod
+    def required_slots(tracker: Tracker) -> List[Text]:
+        print("required_slots(tracker: Tracker)")
+        return["art_type", "size","frame", "finishing", "orientation"]
+
+    def submit(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
-            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+            domain: Dict[Text, Any]) -> List[Dict]:
 
-        dispatcher.utter_message(text="Hello World!")
+        dispatcher.utter_message(template="utter_submit")
 
         return []

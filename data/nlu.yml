@@ -266,3 +266,71 @@ nlu:
     - im looking for a painting that have a beautuful background
     - i would like to get a sketch of my photograph
     - i would like to get a sketch of my photo
+
+- intent: art_type_entry
+  examples: |
+    - im looking for a [graphite](art_type) painting 
+    - i'm looking for a [graphite](art_type) sketch
+    - i want to buy a [graphite](art_type) painting
+    - i want to buy a [graphite](art_type) sketch
+    - can i able to get a [graphite](art_type) art
+    - i want my picture to be drawn in [graphite](art_type)
+    - im looking for a [charcoal](art_type) painting 
+    - i'm looking for a [charcoal](art_type) sketch
+    - i want to buy a [charcoal](art_type) painting
+    - i want to buy a [charcoal](art_type) sketch
+    - can i able to get a [charcoal](art_type) art
+    - i want my picture to be drawn in [charcoal](art_type)
+    - im looking for a [coloured pencil art](art_type) painting 
+    - i'm looking for a [coloured pencil art](art_type) sketch
+    - i want to buy a [coloured pencil art](art_type) painting
+    - i want to buy a [coloured pencil art](art_type) sketch
+    - can i able to get a [coloured pencil art](art_type) art
+    - i want my picture to be drawn in [coloured pencil art](art_type)
+    - i want my picture to be drawn in [oil painting](art_type)
+    - im looking for a [oil painting](art_type) painting 
+    - i'm looking for a [oil painting](art_type) sketch
+    - i want to buy a [oil painting](art_type) painting
+    - i want to buy a [oil painting](art_type) sketch
+    - can i able to get a [oil painting](art_type) art
+    - i want my picture to be drawn in [oil painting](art_type)
+    
+- intent: size_entry
+    - size should be of [A4](size)
+    - size should be of [A3](size)
+    - size should be of [A2](size)
+    - size should be of [A1](size)
+    - painting should be of [A4](size)
+    - painting should be of [A3](size)
+    - painting should be of [A2](size)
+    - painting should be of [A1](size)
+
+- intent: frame_entry
+    - my frame should be of [Standard](frame)
+    - my frame should be of [Wooden](frame)
+    - my frame should be of [Designer](frame)
+    - my canvas should be fitted with a [Standard](frame)
+    - my canvas should be fitted with a [Wooden](frame)
+    - my canvas should be fitted with a [Designer](frame)
+    - frame should be of [Standard](frame)
+    - frame should be of [Wooden](frame)
+    - frame should be of [Designer](frame)
+
+- intent: finishing_entry
+    - the outer finishing should be done with [Maple](finishing)
+    - the outer finishing should be done with [Walnut](finishing)
+    - the outer finishing should be done with [Black](finishing)
+    - the outer finishing should be done with [White](finishing)
+    - the outer finishing should be done with [Graphite](finishing)
+    - outer finishing should be done with [Brass](finishing)
+    - outer finishing should be done with [Maple](finishing)
+    - outer finishing should be done with [Walnut](finishing)
+    - outer finishing should be done with [Black](finishing)
+    - outer finishing should be done with [White](finishing)
+    - outer finishing should be done with [Graphite](finishing)
+    - outer finishing should be done with [Brass](finishing)
+
+- intent: orientation_entry
+    - orientation of canvas should be in [Landscape](orientation)
+    - orientation of canvas should be in [Potrait](orientation)
+    - orientation of canvas should be in [Anything](orientation)

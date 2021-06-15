@@ -26,7 +26,7 @@ entities:
   - orientation
 
 actions:
-  - painting_form
+- validate_painting_form # From actions.py page
 
 slots:
   art_type:
@@ -110,40 +110,45 @@ responses:
   - text: "Do you want to continue?"
   
   utter_wrong_art_type:
-    - text: "Sorry we are unable to proceed with your art type, please try again"
+  - text: "Sorry we are unable to proceed with your art type, please try again"
 
   utter_wrong_size_type:
-    - text: "Sorry we are unable to proceed with your size type, please try again"
+  - text: "Sorry we are unable to proceed with your size type, please try again"
 
   utter_wrong_frame_type:
-    - text: "Sorry we are unable to proceed with your frame type, please try again"
+  - text: "Sorry we are unable to proceed with your frame type, please try again"
 
   utter_wrong_finishing_type:
-    - text: "Sorry we are unable to proceed with your finishing type, please try again"
+  - text: "Sorry we are unable to proceed with your finishing type, please try again"
 
   utter_wrong_orientation_type:
-    - text: "Sorry we are unable to proceed with your orientation type, please try again"
+  - text: "Sorry we are unable to proceed with your orientation type, please try again"
   
   utter_ask_art_type:
   - text: "What is your desired art model"
+  
   utter_ask_size:
   - text: "Please enter your required size"
+  
   utter_ask_frame:
   - text: "Please enter your desired frame type"
+  
   utter_ask_finishing:
   - text: "Please enter your deisired finishing"
+  
   utter_ask_orientation:
   - text: "Please enter orientation"
+  
   utter_submit:
   - text: "All done!"
 
   utter_slots_values:
-    - text: "I am going to run a search using the following parameters:\n
-             - art_type: {art_type}\n
-             - size: {size}\n
-             - frame: {frame}\n
-             - finishing: {finishing}\n
-             - orientation: {orientation}"
+  - text: "I am going to run a search using the following parameters:\n
+            - art_type: {art_type}\n
+            - size: {size}\n
+            - frame: {frame}\n
+            - finishing: {finishing}\n
+            - orientation: {orientation}"
 
 
 session_config:

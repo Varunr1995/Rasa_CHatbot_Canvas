@@ -35,9 +35,8 @@
 
 from typing import Any, Text, Dict, List
 
-from rasa_sdk import Action, Tracker
+from rasa_sdk import Action, Tracker, FormValidationAction
 from rasa_sdk.executor import CollectingDispatcher
-from rasa_sdk.forms import FormValidationAction
 
 class PaintingFormValidation(FormValidationAction):
     """Example of a form validation action."""
@@ -46,7 +45,7 @@ class PaintingFormValidation(FormValidationAction):
         return "validate_painting_form"
 
     @staticmethod
-    def art_db() -> List[Text]:
+    def art_type_db() -> List[Text]:
         """Database of supported cuisines."""
 
         return [
@@ -110,7 +109,7 @@ class PaintingFormValidation(FormValidationAction):
         except ValueError:
             return False
 
-    def validate_art(
+    def validate_art_type(
         self,
         value: Text,
         dispatcher: CollectingDispatcher,
@@ -119,7 +118,7 @@ class PaintingFormValidation(FormValidationAction):
     ) -> Dict[Text, Any]:
         """Validate art type value."""
 
-        if value.lower() in self.art_db():
+        if value.lower() in self.art_type_db():
             # validation succeeded, set the value of the "art_type" slot to value
             return {"art_type": value}
         else:

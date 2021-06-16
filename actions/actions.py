@@ -50,11 +50,11 @@ class PaintingFormValidation(FormValidationAction):
         """Database of supported cuisines."""
 
         return [
-            "Graphite",
-            "Charcoal",
-            "Sketching",
-            "OilPainting",
-            "Colored Pencil"
+            "graphite",
+            "charcoal",
+            "sketching",
+            "oilPainting",
+            "colored pencil"
         ]
 
     @staticmethod
@@ -62,10 +62,10 @@ class PaintingFormValidation(FormValidationAction):
         """Database of supported sizes"""
 
         return [
-            "A1",
-            "A2",
-            "A3",
-            "A4"
+            "a1",
+            "a2",
+            "a3",
+            "a4"
         ]
 
     @staticmethod
@@ -73,9 +73,9 @@ class PaintingFormValidation(FormValidationAction):
         """Database of supported frame types"""
 
         return [
-            "No Frame",
-            "Standard",
-            "Designer"
+            "no frame",
+            "standard",
+            "designer"
             ]
 
     @staticmethod
@@ -83,11 +83,11 @@ class PaintingFormValidation(FormValidationAction):
         """Database of supported finishing"""
 
         return [
-            "Maple",
-            "Wood",
-            "Metal",
-            "Glass",
-            "Walnut"
+            "maple",
+            "wood",
+            "metal",
+            "glass",
+            "walnut"
         ]
 
     @staticmethod
@@ -95,9 +95,9 @@ class PaintingFormValidation(FormValidationAction):
         """Database of supported orientations."""
 
         return [
-            "Landscape",
-            "Potrait",
-            "Designer Choice"
+            "landscape",
+            "potrait",
+            "designer choice"
             ]
 
     @staticmethod

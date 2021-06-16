@@ -35,8 +35,9 @@
 
 from typing import Any, Text, Dict, List
 
-from rasa_sdk import Action, Tracker, FormValidationAction
+from rasa_sdk import Tracker 
 from rasa_sdk.executor import CollectingDispatcher
+from rasa_sdk.forms import FormValidationAction
 
 class PaintingFormValidation(FormValidationAction):
     """Example of a form validation action."""

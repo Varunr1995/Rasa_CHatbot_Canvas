@@ -10,6 +10,7 @@ intents:
   - bot_challenge
   - askname
   - help
+  - out_of_scope
   - art_type_entry
   - size_entry
   - frame_entry

@@ -33,17 +33,26 @@
 
 # Class function to validate the input from the user and print the results
 
-from typing import Any, Text, Dict, List
+from typing import Any, Text, Dict, List, Union
 
 from rasa_sdk import Tracker 
 from rasa_sdk.executor import CollectingDispatcher
 from rasa_sdk.forms import FormValidationAction
-
 class PaintingFormValidation(FormValidationAction):
     """Example of a form validation action."""
 
     def name(self) -> Text:
         return "validate_painting_form"
+
+    @staticmethod
+    def required_slots(tracker:Tracker) -> List[Text]:
+        print("required_slots(tracker: Tracker)")
+        return['art_model', 'size', 'frame', 'finishing', 'orientation']
+
+    def slot_mappings(self) -> Dict[Text, Union[Dict, List[Dict]]]:
+        return{
+            "art_model": [self.from_entity(entity='art_type', intent='art_type_entry')]
+        }
 
     @staticmethod
     def art_type_db() -> List[Text]:
@@ -110,7 +119,7 @@ class PaintingFormValidation(FormValidationAction):
         except ValueError:
             return False
 
-    def validate_art_type(
+    def validate_art_model(
         self,
         value: Text,
         dispatcher: CollectingDispatcher,
@@ -199,3 +208,16 @@ class PaintingFormValidation(FormValidationAction):
             # validation failed, set this slot to None, meaning the
             # user will be asked for the slot again
             return {"orientation": None}
+
+    def submit(
+        self,
+        dispatcher:CollectingDispatcher
+        tracker: Tracker,
+        domain: Dict[Text, Any]
+     ) -> List[Dict]:
+
+        dispatcher.utter_message(template="utter_submit")
+     
+        return []
+
+# Class function to validate the input from the user, print the results and store in response

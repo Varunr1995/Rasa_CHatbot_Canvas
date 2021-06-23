@@ -22,12 +22,10 @@ def DataUpdate(*args):
     args = list(args)
     conn = connect()
     cursor = conn.cursor()
-    sql = "INSERT INTO `Rasa_Chatbot_Info` (`model`, `frame_size`, `frame_type`,`frame_orientation`,`frame_finishing`) VALUES (%s,%s,%s,%s,%s)"
+    sql = 'INSERT INTO Rasa_Chatbot_Info (model,frame_size,frame_type,frame_orientation,frame_finishing) VALUES ("{0}","{1}","{2}","{3}","{4}")'
     cursor.execute(sql)
     conn.commit()
-    cursor.close()
-    return
-
+    print(cursor.rowcount, "record inserted")
     
     
     

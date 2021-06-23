@@ -218,7 +218,8 @@ class PaintingFormValidation(FormValidationAction):
      ) -> List[Dict]:
 
         dispatcher.utter_message(template="utter_submit")
-        tracker.get_slot("model", "frame_size", "frame_type", "frame_finishing","frame_orientation")
-        DataUpdate()
-
+        
+        DataUpdate(tracker.get_slot("model"), tracker.get_slot("frame_size"), tracker.get_slot("frame_type"), tracker.get_slot("frame_finishing"), tracker.get_slot("frame_orientation"))
+        dispatcher.utter_message("Your response has been loaded.")
+        
         return []

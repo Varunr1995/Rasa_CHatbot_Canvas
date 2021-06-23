@@ -1,6 +1,6 @@
 import psycopg2
 
-def DataUpdate(Model, Frame_Size, Frame_Type, Frame_Orientation, Frame_Finishing):
+def DataUpdate(art_type_entry, size_entry, frame_entry, finishing_entry, orientation_entry):
     '''
     Pushes Descriptive Analytics Data to the Database
     '''
@@ -13,7 +13,7 @@ def DataUpdate(Model, Frame_Size, Frame_Type, Frame_Orientation, Frame_Finishing
 
     mycursor = db.connect()
     
-    sql = 'INSERT INTO Rasa_Chatbot_Info (model,frame_size,frame_type,frame_orientation,frame_finishing) VALUES ("{0}","{1}","{2}","{3}","{4}");'.format(Model, Frame_Size, Frame_Type, Frame_Orientation, Frame_Finishing)
+    sql = 'INSERT INTO Rasa_Chatbot_Info (model,frame_size,frame_type,frame_orientation,frame_finishing) VALUES ("{0}","{1}","{2}","{3}","{4}");'.format(art_type_entry, size_entry, frame_entry, finishing_entry, orientation_entry)
     
     mycursor.execute(sql)
 

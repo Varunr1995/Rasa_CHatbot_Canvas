@@ -13,7 +13,7 @@ def DataUpdate(art_type_entry, size_entry, frame_entry, finishing_entry, orienta
 
     mycursor = db.connect()
     
-    sql = 'INSERT INTO Rasa_Chatbot_Info (model,frame_size,frame_type,frame_orientation,frame_finishing) VALUES ("{0}","{1}","{2}","{3}","{4}");'.format(art_type_entry, size_entry, frame_entry, finishing_entry, orientation_entry)
+    sql = 'INSERT INTO Rasa_Chatbot_Info (Model,Frame_Size,Frame_Type,Frame_Orientation,Frame_Finishing) VALUES ("{0}","{1}","{2}","{3}","{4}");'.format(art_type_entry, size_entry, frame_entry, finishing_entry, orientation_entry)
     
     mycursor.execute(sql)
 

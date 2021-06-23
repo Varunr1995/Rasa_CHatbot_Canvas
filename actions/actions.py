@@ -33,12 +33,14 @@
 
 # Class function to validate the input from the user and print the results
 
+from database_connector import DataUpdate
 from typing import Any, Text, Dict, List, Union
 
 from rasa_sdk import Tracker 
 from rasa_sdk.executor import CollectingDispatcher
 from rasa_sdk.forms import FormValidationAction
 class PaintingFormValidation(FormValidationAction):
+
     """Example of a form validation action."""
 
     def name(self) -> Text:
@@ -216,7 +218,7 @@ class PaintingFormValidation(FormValidationAction):
      ) -> List[Dict]:
 
         dispatcher.utter_message(template="utter_submit")
-     
-        return []
+        tracker.get_slot("model", "frame_size", "frame_type", "frame_finishing","frame_orientation")
+        DataUpdate()
 
-# Class function to validate the input from the user, print the results and store in response
+        return []

@@ -193,7 +193,7 @@ class PaintingFormValidation(FormValidationAction):
             # user will be asked for the slot again
             return {"frame_finishing": None}
 
-    def validate_orientation(
+    def validate_frame_orientation(
         self,
         value: Text,
         dispatcher: CollectingDispatcher,

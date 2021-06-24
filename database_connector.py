@@ -1,16 +1,22 @@
-import mysql.connector
+import psycopg2
 
 def DataUpdate(art_type_entry, size_entry, frame_entry, finishing_entry, orientation_entry):
-    mydb = mysql.connector.connect(
-        host = 'localhost',
-        user = 'root',
-        passwd = 'V@run1995',
-        database = 'rasa_chatbot'
-    )
+    '''
+    Pushes Descriptive Analytics Data to the Database
+    '''
+    db = psycopg2.connect(
+                host="localhost",
+                database="Rasa_Chatbot",
+                user="postgres",
+                password="V@run1995"
+                )
 
-    mycursor = mydb.cursor()
+    mycursor = db.connect()
+    
+    postgres_insert_query = """INSERT INTO rasainfo(model,size,type,orientation,finishing) VALUES (%s,%s,%s,%s,%s);""".format(art_type_entry,size_entry, frame_entry, finishing_entry, orientation_entry)
+    
+    mycursor.execute(postgres_insert_query)
+    
+    db.commit()
 
-    sql = "INSERT INTO chatbot_info (model, frame_size, frame_type, frame_finishing, frame_orientation) VALUES ('{0}','{1}','{2}','{3}','{4}');".format(art_type_entry, size_entry,frame_entry, finishing_entry, orientation_entry)
-    mycursor.execute(sql)
-
-    mydb.commit()
+    print("Record inserted successfully into table")

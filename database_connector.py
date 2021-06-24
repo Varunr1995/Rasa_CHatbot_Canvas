@@ -13,8 +13,10 @@ def DataUpdate(art_type_entry, size_entry, frame_entry, finishing_entry, orienta
 
     mycursor = db.connect()
     
-    sql = 'INSERT INTO Rasa_Chatbot_Info (Model,Frame_Size,Frame_Type,Frame_Orientation,Frame_Finishing) VALUES ("{0}","{1}","{2}","{3}","{4}");'.format(art_type_entry, size_entry, frame_entry, finishing_entry, orientation_entry)
+    postgres_insert_query = """INSERT INTO rasainfo(model,size,type,orientation,finishing) VALUES (%s,%s,%s,%s,%s);""".format(art_type_entry,size_entry, frame_entry, finishing_entry, orientation_entry)
     
-    mycursor.execute(sql)
+    mycursor.execute(postgres_insert_query)
+    
+    db.commit()
 
-    
+    print("Record inserted successfully into table")

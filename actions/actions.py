@@ -39,6 +39,7 @@ from typing import Any, Text, Dict, List, Union
 from rasa_sdk import Tracker 
 from rasa_sdk.executor import CollectingDispatcher
 from rasa_sdk.forms import FormValidationAction
+
 class PaintingFormValidation(FormValidationAction):
 
     """Example of a form validation action."""
@@ -218,7 +219,7 @@ class PaintingFormValidation(FormValidationAction):
      ) -> List[Dict]:
 
         dispatcher.utter_message(template="utter_submit")
-        
+
         DataUpdate(tracker.get_slot("model"), tracker.get_slot("frame_size"), tracker.get_slot("frame_type"), tracker.get_slot("frame_finishing"), tracker.get_slot("frame_orientation"))
         dispatcher.utter_message("Your response has been loaded.")
         

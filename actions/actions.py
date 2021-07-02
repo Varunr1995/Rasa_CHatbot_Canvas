@@ -48,13 +48,14 @@ class PaintingFormValidation(FormValidationAction):
     def name(self) -> Text:
         return "validate_painting_form"
 
+    @staticmethod
+    def required_slots(tracker:Tracker) -> List[Text]:
+        print("required_slots(tracker: Tracker)")
+        return['art_model', 'size', 'frame', 'finishing', 'orientation']
+
     def slot_mappings(self) -> Dict[Text, Union[Dict, List[Dict]]]:
         return{
-            "model": [self.from_entity(entity='art_type', intent='art_type_entry')],
-            "frame_size": [self.from_entity(entity='size', intent='size_entry')],
-            "frame_type": [self.from_entity(entity='frame', intent='frame_entry')],
-            "frame_finishing": [self.from_entity(entity='finishing', intent='finishing_entry')],
-            "frame_orientation": [self.from_entity(entity='orientation', intent='orientation_entry')]
+            "art_model": [self.from_entity(entity='art_type', intent='art_type_entry')]
         }
 
     @staticmethod
@@ -122,7 +123,7 @@ class PaintingFormValidation(FormValidationAction):
         except ValueError:
             return False
 
-    def validate_model(
+    def validate_art_model(
         self,
         value: Text,
         dispatcher: CollectingDispatcher,
@@ -133,14 +134,14 @@ class PaintingFormValidation(FormValidationAction):
 
         if value.lower() in self.art_type_db():
             # validation succeeded, set the value of the "art_type" slot to value
-            return {"model": value}
+            return {"art_type": value}
         else:
             dispatcher.utter_message(response="utter_wrong_art_type")
             # validation failed, set this slot to None, meaning the
             # user will be asked for the slot again
-            return {"model": None}
+            return {"art_type": None}
 
-    def validate_frame_size(
+    def validate_size(
         self,
         value: Text,
         dispatcher: CollectingDispatcher,
@@ -151,14 +152,14 @@ class PaintingFormValidation(FormValidationAction):
 
         if value.lower() in self.size_db():
             # validation succeeded, set the value of the "size" slot to value
-            return {"frame_size": value}
+            return {"size": value}
         else:
             dispatcher.utter_message(response="utter_wrong_size_type")
             # validation failed, set this slot to None, meaning the
             # user will be asked for the slot again
-            return {"frame_size": None}
+            return {"size": None}
 
-    def validate_frame_type(
+    def validate_frame(
         self,
         value: Text,
         dispatcher: CollectingDispatcher,
@@ -169,14 +170,14 @@ class PaintingFormValidation(FormValidationAction):
 
         if value.lower() in self.frame_db():
             # validation succeeded, set the value of the "frame" slot to value
-            return {"frame_type": value}
+            return {"frame": value}
         else:
             dispatcher.utter_message(response="utter_wrong_frame_type")
             # validation failed, set this slot to None, meaning the
             # user will be asked for the slot again
-            return {"frame_type": None}
+            return {"frame": None}
 
-    def validate_frame_finishing(
+    def validate_finishing(
         self,
         value: Text,
         dispatcher: CollectingDispatcher,
@@ -187,12 +188,12 @@ class PaintingFormValidation(FormValidationAction):
 
         if value.lower() in self.finishing_db():
             # validation succeeded, set the value of the "finishing" slot to value
-            return {"frame_finishing": value}
+            return {"finishing": value}
         else:
             dispatcher.utter_message(response="utter_wrong_finishing_type")
             # validation failed, set this slot to None, meaning the
             # user will be asked for the slot again
-            return {"frame_finishing": None}
+            return {"finishing": None}
 
     def validate_frame_orientation(
         self,
@@ -205,16 +206,16 @@ class PaintingFormValidation(FormValidationAction):
 
         if value.lower() in self.orientation_db():
             # validation succeeded, set the value of the "orientation" slot to value
-            return {"frame_orientation": value}
+            return {"orientation": value}
         else:
             dispatcher.utter_message(response="utter_wrong_orientation_type")
             # validation failed, set this slot to None, meaning the
             # user will be asked for the slot again
-            return {"frame_orientation": None}
+            return {"orientation": None}
 
     def submit(
         self,
-        dispatcher:CollectingDispatcher,
+        dispatcher:CollectingDispatcher
         tracker: Tracker,
         domain: Dict[Text, Any]
      ) -> List[Dict]:

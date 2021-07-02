@@ -30,23 +30,23 @@ actions:
 - validate_painting_form # From actions.py page
 
 slots:
-  model:
+  art_type:
     type: text
     influence_conversation: false
     auto_fill: false
-  frame_size:
+  size:
     type: text
     influence_conversation: false
     auto_fill: false
-  frame_type:
+  frame:
     type: text
     influence_conversation: false
     auto_fill: false
-  frame_orientation:
+  orientation:
     type: text
     influence_conversation: false
     auto_fill: false
-  frame_finishing:
+  finishing:
     type: text
     influence_conversation: false
     auto_fill: false
@@ -57,19 +57,19 @@ slots:
 forms:
   painting_form:
     required_slots:
-      model:
+      art_type:
       - type: from_entity
         entity: art_type
-      frame_size:
+      size:
       - type: from_entity
         entity: size
-      frame_type:
+      frame:
       - type: from_entity
         entity: frame
-      frame_orientation:
+      orientation:
       - type: from_entity
         entity: orientation
-      frame_finishing:
+      finishing:
       - type: from_entity
         entity: finishing
 
@@ -125,19 +125,19 @@ responses:
   utter_wrong_orientation_type:
   - text: "Sorry we are unable to proceed with your orientation type, please try again"
   
-  utter_ask_model:
+  utter_ask_art_type:
   - text: "What is your desired art model"
   
-  utter_ask_frame_size:
+  utter_ask_size:
   - text: "Please enter your required size"
   
-  utter_ask_frame_type:
+  utter_ask_frame:
   - text: "Please enter your desired frame type"
   
-  utter_ask_frame_finishing:
+  utter_ask_finishing:
   - text: "Please enter your deisired finishing"
   
-  utter_ask_frame_orientation:
+  utter_ask_orientation:
   - text: "Please enter orientation"
   
   utter_submit:
@@ -145,11 +145,11 @@ responses:
 
   utter_slots_values:
   - text: "I am going to run a search using the following parameters:\n
-            - art_type: {model}\n
-            - size: {frame_size}\n
-            - frame: {frame_type}\n
-            - finishing: {frame_finishing}\n
-            - orientation: {frame_orientation}"
+            - art_type: {art_type}\n
+            - size: {size}\n
+            - frame: {frame}\n
+            - finishing: {finishing}\n
+            - orientation: {orientation}"
 
 session_config:
   session_expiration_time: 60

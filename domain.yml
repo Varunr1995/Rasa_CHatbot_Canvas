@@ -21,16 +21,16 @@ intents:
 
 entities:
   - art_type
-  - size
-  - frame
-  - finishing
-  - orientation
+  - size_type
+  - frame_type
+  - finishing_type
+  - orientation_type
 
 actions:
 - validate_painting_form # From actions.py page
 
 slots:
-  art_type:
+  model:
     type: text
     influence_conversation: false
     auto_fill: false
@@ -62,16 +62,16 @@ forms:
         entity: art_type
       size:
       - type: from_entity
-        entity: size
+        entity: size_type
       frame:
       - type: from_entity
-        entity: frame
+        entity: frame_type
       orientation:
       - type: from_entity
-        entity: orientation
+        entity: orientation_type
       finishing:
       - type: from_entity
-        entity: finishing
+        entity: finishing_type
 
 responses:
   utter_greet:
@@ -125,7 +125,7 @@ responses:
   utter_wrong_orientation_type:
   - text: "Sorry we are unable to proceed with your orientation type, please try again"
   
-  utter_ask_art_type:
+  utter_ask_model:
   - text: "What is your desired art model"
   
   utter_ask_size:
@@ -145,7 +145,7 @@ responses:
 
   utter_slots_values:
   - text: "I am going to run a search using the following parameters:\n
-            - art_type: {art_type}\n
+            - art_type: {model}\n
             - size: {size}\n
             - frame: {frame}\n
             - finishing: {finishing}\n

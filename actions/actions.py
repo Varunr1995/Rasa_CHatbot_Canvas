@@ -51,15 +51,19 @@ class PaintingFormValidation(FormValidationAction):
     @staticmethod
     def required_slots(tracker:Tracker) -> List[Text]:
         print("required_slots(tracker: Tracker)")
-        return['art_model', 'size', 'frame', 'finishing', 'orientation']
+        return['model', 'size', 'frame', 'finishing', 'orientation']
 
     def slot_mappings(self) -> Dict[Text, Union[Dict, List[Dict]]]:
         return{
-            "art_model": [self.from_entity(entity='art_type', intent='art_type_entry')]
-        }
+            "model": [self.from_entity(entity='art_type', intent='art_type_entry')],
+            "size": [self.from_entity(entity='size_type', intent='art_type_entry')],
+            "frame": [self.from_entity(entity='frame_type', intent='art_type_entry')],
+            "finishing": [self.from_entity(entity='finishing_type', intent='art_type_entry')],
+            "orientation": [self.from_entity(entity='orientation_type', intent='art_type_entry')]
+            }
 
     @staticmethod
-    def art_type_db() -> List[Text]:
+    def model_db() -> List[Text]:
         """Database of supported cuisines."""
 
         return [
@@ -123,7 +127,7 @@ class PaintingFormValidation(FormValidationAction):
         except ValueError:
             return False
 
-    def validate_art_model(
+    def validate_model(
         self,
         value: Text,
         dispatcher: CollectingDispatcher,
@@ -134,12 +138,12 @@ class PaintingFormValidation(FormValidationAction):
 
         if value.lower() in self.art_type_db():
             # validation succeeded, set the value of the "art_type" slot to value
-            return {"art_type": value}
+            return {"model": value}
         else:
             dispatcher.utter_message(response="utter_wrong_art_type")
             # validation failed, set this slot to None, meaning the
             # user will be asked for the slot again
-            return {"art_type": None}
+            return {"model": None}
 
     def validate_size(
         self,
@@ -177,7 +181,7 @@ class PaintingFormValidation(FormValidationAction):
             # user will be asked for the slot again
             return {"frame": None}
 
-    def validate_finishing(
+    def validate_finishing_type(
         self,
         value: Text,
         dispatcher: CollectingDispatcher,
@@ -195,7 +199,7 @@ class PaintingFormValidation(FormValidationAction):
             # user will be asked for the slot again
             return {"finishing": None}
 
-    def validate_frame_orientation(
+    def validate_orientation(
         self,
         value: Text,
         dispatcher: CollectingDispatcher,

@@ -20,3 +20,4 @@ def DataUpdate(art_type_entry, size_entry, frame_entry, finishing_entry, orienta
     db.commit()
 
     print("Record inserted successfully into table")
+    

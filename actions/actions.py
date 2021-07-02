@@ -33,7 +33,7 @@
 
 # Class function to validate the input from the user and print the results
 
-from database_connector import DataUpdate
+from database_connector import connect
 from typing import Any, Text, Dict, List, Union
 
 from rasa_sdk import Tracker 
